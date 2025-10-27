@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#121212"> <!-- tmavosivá pozadie -->
+    <LinearLayout
+        android:id="@+id/undoRedoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+        <!-- Cancel / Back tlačidlo naľavo -->
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:backgroundTint="#4C4C4C"
+            android:textColor="@color/white"/>
+
+        <!-- Space alebo filler medzi tlačidlami -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!-- Undo -->
+        <Button
+            android:id="@+id/undoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Undo"
+            android:backgroundTint="#4C4C4C"
+            android:textColor="@color/white"/>
+
+        <!-- Medzera medzi Undo a Redo -->
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"/>
+
+        <!-- Redo -->
+        <Button
+            android:id="@+id/redoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Redo"
+            android:backgroundTint="#4C4C4C"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/titleInput"
+        android:hint="Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="@android:color/white"/>
+
+    <EditText
+        android:id="@+id/contentInput"
+        android:hint="Content"
+        android:layout_width="match_parent"
+        android:nestedScrollingEnabled="true"
+        android:overScrollMode="always"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/white"/>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:text="Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4C4C4C"
+        android:textColor="@android:color/white"
+        />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:text="Delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B00020"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>
