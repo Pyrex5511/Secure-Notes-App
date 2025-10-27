@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.NestedScrollView
 import androidx.lifecycle.Observer
 import java.util.Stack
 
@@ -110,6 +111,15 @@ class NoteDetailActivity : AppCompatActivity() {
             viewModel.deleteNoteById(noteId)
             finish()
         }
+
+        val backButton = findViewById<Button>(R.id.backButton)
+
+        backButton.setOnClickListener {
+            // Jednoducho zavrie aktuálne Activity a vráti sa späť
+            finish()
+        }
+
+
     }
 
     private fun undo() {

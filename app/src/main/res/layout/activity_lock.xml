@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <TextView
+        android:id="@+id/tvPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unlock"
+        android:textSize="22sp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnUseBiometric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use fingerprint"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/etPin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter PIN"
+        android:inputType="numberPassword"
+        android:maxLines="1"
+        android:layout_marginBottom="12dp"
+        android:visibility="visible"
+        android:textColor="@android:color/white"/>
+
+    <Button
+        android:id="@+id/btnSubmitPin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Unlock with PIN"/>
+</LinearLayout>
