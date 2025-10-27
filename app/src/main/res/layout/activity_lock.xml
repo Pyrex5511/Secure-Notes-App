@@ -32,7 +32,6 @@
         android:inputType="numberPassword"
         android:maxLines="1"
         android:layout_marginBottom="12dp"
-        android:visibility="visible"
         android:textColor="@android:color/white"/>
 
     <Button
