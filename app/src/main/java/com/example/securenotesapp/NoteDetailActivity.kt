@@ -1,5 +1,6 @@
 package com.example.securenotesapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -108,16 +109,43 @@ class NoteDetailActivity : AppCompatActivity() {
         }
 
         deleteButton.setOnClickListener {
-            viewModel.deleteNoteById(noteId)
-            finish()
+            // Vytvor AlertDialog na potvrdenie vymazania
+            val dialog = androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle("Vymazať poznámku")
+                .setMessage("Naozaj chcete vymazať túto poznámku?")
+                .setPositiveButton("Áno") { dialogInterface, _ ->
+                    viewModel.deleteNoteById(noteId)
+                    dialogInterface.dismiss()
+                    finish() // zatvor detail po vymazaní
+                }
+                .setNegativeButton("Nie") { dialogInterface, _ ->
+                    dialogInterface.dismiss()
+                }
+                .create()
+
+            // Nastavenie vlastného pozadia (zaoblené rohy)
+            dialog.window?.setBackgroundDrawableResource(R.drawable.dialog_background)
+
+            dialog.show()
+
+            // Zmena farby tlačidiel
+            dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE)
+                .setTextColor(getColor(R.color.dark_red)) // Áno -> tmavočervené
+            dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_NEGATIVE)
+                .setTextColor(getColor(android.R.color.white)) // Nie -> biele
         }
+
 
         val backButton = findViewById<Button>(R.id.backButton)
 
         backButton.setOnClickListener {
-            // Jednoducho zavrie aktuálne Activity a vráti sa späť
+            val intent = Intent(this, MainActivity::class.java)
+            // Zaručí, že sa otvorí MainActivity a odstránia sa iné aktivity nad ňou
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intent)
             finish()
         }
+
 
 
     }

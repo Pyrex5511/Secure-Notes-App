@@ -33,14 +33,15 @@ android {
 
 dependencies {
     val room_version = "2.6.1"
-
+    implementation("androidx.security:security-crypto:1.1.0-alpha03")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.biometric:biometric:1.2.0-alpha04")
     implementation("androidx.security:security-crypto:1.1.0-alpha03")
-    // ROOM (lokálna DB)
+    implementation("androidx.lifecycle:lifecycle-process:2.8.7")
+
     implementation("androidx.room:room-runtime:$room_version")
     kapt("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:$room_version")

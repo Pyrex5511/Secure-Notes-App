@@ -36,17 +36,45 @@ class NoteAdapter(
         } else {
             note.content
         }
-        holder.deleteButton.setOnClickListener { onDeleteClick(note) }
+
+        holder.deleteButton.setOnClickListener {
+            val dialog = androidx.appcompat.app.AlertDialog.Builder(holder.itemView.context)
+                .setTitle("Vymazať poznámku")
+                .setMessage("Naozaj chcete vymazať túto poznámku?")
+                .setPositiveButton("Áno") { dialogInterface, _ ->
+                    onDeleteClick(note)
+                    dialogInterface.dismiss()
+                }
+                .setNegativeButton("Nie") { dialogInterface, _ ->
+                    dialogInterface.dismiss()
+                }
+                .create()
+
+            // Nastavenie vlastného pozadia
+            dialog.window?.setBackgroundDrawableResource(R.drawable.dialog_background)
+
+            dialog.show()
+
+            // Zmena farby tlačidiel
+            dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE)
+                .setTextColor(holder.itemView.context.getColor(R.color.dark_red))
+            dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_NEGATIVE)
+                .setTextColor(holder.itemView.context.getColor(android.R.color.white))
+        }
+
+
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, NoteDetailActivity::class.java)
             intent.putExtra("noteId", note.id)
             holder.itemView.context.startActivity(intent)
         }
-
     }
+
 
     fun setNotes(newNotes: List<Note>) {
         notes = newNotes
         notifyDataSetChanged()
     }
+
+
 }
