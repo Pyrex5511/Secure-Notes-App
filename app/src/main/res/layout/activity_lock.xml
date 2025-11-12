@@ -5,16 +5,55 @@
     android:gravity="center"
     android:padding="24dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#222222">
 
     <TextView
         android:id="@+id/tvPrompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please authenticate"
+        android:text="Authentification"
         android:textSize="18sp"
         android:textAlignment="center"
         android:layout_marginBottom="24dp"
-        android:textColor="@color/white"/>
+        android:textColor="@android:color/white"/>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btnTryAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Try again"
+        android:visibility="gone"
+        android:backgroundTint="#B00020"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/tvPinTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/white"
+        android:text="Zadajte PIN pre odomknutie"
+        android:visibility="gone" /> <EditText
+    android:id="@+id/etPin"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    android:inputType="numberPassword"
+    android:maxLength="4"
+    android:hint="4-miestny PIN"
+    android:gravity="center"
+    android:layout_marginBottom="16dp"
+    android:textColor="@android:color/white"
+    android:textColorHint="#999999"
+    android:backgroundTint="@color/dark_red"
+    android:visibility="gone" /> <Button
+    android:id="@+id/btnPinConfirm"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Potvrdiť PIN"
+    android:backgroundTint="@color/dark_red"
+    android:textColor="@android:color/white"
+    android:visibility="gone" /> </LinearLayout>

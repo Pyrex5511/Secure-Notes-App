@@ -39,13 +39,13 @@ class NoteAdapter(
 
         holder.deleteButton.setOnClickListener {
             val dialog = androidx.appcompat.app.AlertDialog.Builder(holder.itemView.context)
-                .setTitle("Vymazať poznámku")
-                .setMessage("Naozaj chcete vymazať túto poznámku?")
-                .setPositiveButton("Áno") { dialogInterface, _ ->
+                .setTitle("Delete note")
+                .setMessage("Are you sure you want to delete this note?")
+                .setPositiveButton("Yes") { dialogInterface, _ ->
                     onDeleteClick(note)
                     dialogInterface.dismiss()
                 }
-                .setNegativeButton("Nie") { dialogInterface, _ ->
+                .setNegativeButton("No") { dialogInterface, _ ->
                     dialogInterface.dismiss()
                 }
                 .create()

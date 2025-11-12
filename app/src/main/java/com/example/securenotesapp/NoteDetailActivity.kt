@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.NestedScrollView
 import androidx.lifecycle.Observer
 import java.util.Stack
 
@@ -31,7 +30,7 @@ class NoteDetailActivity : AppCompatActivity() {
     private val contentRedoStack = Stack<String>()
 
     private var isUndoOrRedo = false
-    private var isInitializing = true // 🆕 pridáme tento flag
+    private var isInitializing = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,14 +110,14 @@ class NoteDetailActivity : AppCompatActivity() {
         deleteButton.setOnClickListener {
             // Vytvor AlertDialog na potvrdenie vymazania
             val dialog = androidx.appcompat.app.AlertDialog.Builder(this)
-                .setTitle("Vymazať poznámku")
-                .setMessage("Naozaj chcete vymazať túto poznámku?")
-                .setPositiveButton("Áno") { dialogInterface, _ ->
+                .setTitle("Delete note")
+                .setMessage("Are you sure you want to delete this note?")
+                .setPositiveButton("Yes") { dialogInterface, _ ->
                     viewModel.deleteNoteById(noteId)
                     dialogInterface.dismiss()
                     finish() // zatvor detail po vymazaní
                 }
-                .setNegativeButton("Nie") { dialogInterface, _ ->
+                .setNegativeButton("No") { dialogInterface, _ ->
                     dialogInterface.dismiss()
                 }
                 .create()
