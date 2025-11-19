@@ -30,12 +30,7 @@ class NoteAdapter(
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val note = notes[position]
         holder.title.text = note.title
-        val maxLength = 256
-        holder.content.text = if (note.content.length > maxLength) {
-            note.content.substring(0, maxLength) + "…"
-        } else {
-            note.content
-        }
+        holder.content.text = note.content
 
         holder.deleteButton.setOnClickListener {
             val dialog = androidx.appcompat.app.AlertDialog.Builder(holder.itemView.context)
@@ -57,7 +52,7 @@ class NoteAdapter(
 
             // Zmena farby tlačidiel
             dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE)
-                .setTextColor(holder.itemView.context.getColor(R.color.dark_red))
+                .setTextColor(android.graphics.Color.parseColor("#B00020"))
             dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_NEGATIVE)
                 .setTextColor(holder.itemView.context.getColor(android.R.color.white))
         }

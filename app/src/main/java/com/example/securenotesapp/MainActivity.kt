@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-// Potrebné importy pre LayoutManager a konverziu DP
 import androidx.recyclerview.widget.GridLayoutManager
 import android.util.TypedValue
 

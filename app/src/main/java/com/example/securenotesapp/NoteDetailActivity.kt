@@ -6,6 +6,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -20,8 +21,8 @@ class NoteDetailActivity : AppCompatActivity() {
     private lateinit var contentInput: EditText
     private lateinit var saveButton: Button
     private lateinit var deleteButton: Button
-    private lateinit var undoButton: Button
-    private lateinit var redoButton: Button
+    private lateinit var undoButton: ImageButton
+    private lateinit var redoButton: ImageButton
 
     // 🧠 Stacky pre oba polia
     private val titleUndoStack = Stack<String>()
@@ -129,13 +130,13 @@ class NoteDetailActivity : AppCompatActivity() {
 
             // Zmena farby tlačidiel
             dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE)
-                .setTextColor(getColor(R.color.dark_red)) // Áno -> tmavočervené
+                .setTextColor(android.graphics.Color.parseColor("#B00020"))
             dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_NEGATIVE)
                 .setTextColor(getColor(android.R.color.white)) // Nie -> biele
         }
 
 
-        val backButton = findViewById<Button>(R.id.backButton)
+        val backButton = findViewById<ImageButton>(R.id.backButton)
 
         backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

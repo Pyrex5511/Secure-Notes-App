@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
     android:background="#121212"> <!-- tmavosivá pozadie -->
@@ -13,13 +14,14 @@
         android:gravity="center_vertical">
 
         <!-- Cancel / Back tlačidlo naľavo -->
-        <Button
+        <ImageButton
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Back"
-            android:backgroundTint="#4C4C4C"
-            android:textColor="@color/white"/>
+            android:src="@drawable/back_arrow"
+            android:background="@android:color/transparent"
+            app:tint="@color/white"
+            />
 
         <!-- Space alebo filler medzi tlačidlami -->
         <View
@@ -28,12 +30,12 @@
             android:layout_weight="1"/>
 
         <!-- Undo -->
-        <Button
+        <ImageButton
             android:id="@+id/undoButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Undo"
-            android:backgroundTint="#4C4C4C"
+            android:src="@drawable/undo_arrow"
+            android:backgroundTint="#00000000"
             android:textColor="@color/white"/>
 
         <!-- Medzera medzi Undo a Redo -->
@@ -42,12 +44,13 @@
             android:layout_height="wrap_content"/>
 
         <!-- Redo -->
-        <Button
+        <ImageButton
             android:id="@+id/redoButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Redo"
-            android:backgroundTint="#4C4C4C"
+            android:src="@drawable/undo_arrow"
+            android:scaleX="-1.0"
+            android:backgroundTint="#00000000"
             android:textColor="@color/white"/>
     </LinearLayout>
 
