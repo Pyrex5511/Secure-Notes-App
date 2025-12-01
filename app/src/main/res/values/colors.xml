@@ -10,4 +10,9 @@
     <color name="dark_red">#560002</color>
     <color name="dialogBackground">#FFFFFF</color>
     <color name="dialogText">#212121</color>
+
+    <color name="note_color_red">#500303</color>
+    <color name="note_color_brown">#4E2E01</color>
+    <color name="note_color_green">#00562E</color>
+    <color name="note_color_gray">#2D2D2D</color>
 </resources>

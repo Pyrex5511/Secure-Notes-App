@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
@@ -16,13 +15,20 @@
         android:paddingHorizontal="8dp"
         />
 
-    <!-- FloatingActionButton -->
+    <View
+        android:id="@+id/fadeView"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_fade_gradient" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="24dp"
         android:contentDescription="Add Note"
         app:srcCompat="@drawable/plus_icon"
         app:tint="@android:color/white"
